@@ -1,0 +1,127 @@
+<html>
+<head>
+
+	<title>Sites List</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="css/index.css" />
+
+	<!-- libs -->	
+	<script src="lib/jquery.js"></script>
+	<script src="lib/handlebars.js"></script>
+	<script src="lib/moment.js"></script>
+	
+	<!-- data -->
+	<script src="js/sites.js"></script>
+	
+</head>
+<body>
+
+	<main class="section">
+	
+		<h1>Sites List</h1>
+	
+		<table id="sites-table">
+		
+			<script id="row-template" type="text/x-handlebars-template">
+				
+				{{#each sites}}
+
+					<tr>
+					
+						<td style="color: {{ color }};">{{ name }}</td>
+						<td><a href="#">Dev</a></td>
+						<td><a href="http://{{ slug }}.com">Prod</a></td>
+					
+					</tr>			
+
+				{{/each}}
+			
+			</script>
+
+		</table>
+	
+	</main>
+	
+	<aside class="section">
+	
+		<h3 class="text-center datetime"></h3>	
+	
+	</aside>
+	
+	
+	<aside class="section">
+	
+		<h2>Search</h2>
+	
+		<ul class="no-bullets">
+		
+			<li>
+
+				<form method="get" action="http://www.google.com/search">
+				
+					<input type="text" name="q" size="25" maxlength="255" placeholder="Google" value="" />
+					<input class="hidden" type="submit" value="Search Google" />
+				
+				</form>	
+							
+			</li>
+			
+			<li>
+			
+				<form method="get" action="http://jira.com/secure/QuickSearch.jspa">
+				
+					<input type="text" name="searchString" size="25" maxlength="255" placeholder="Jira" value="" />
+					<input class="hidden" type="submit" value="Search Jira" />
+				
+				</form>				
+			
+			</li>
+			
+			<li>
+
+				<form method="get" action="http://confluence.jira.com/dosearchsite.action">
+				
+					<input type="text" name="queryString" size="25" maxlength="255" placeholder="Confluence" value="" />
+					<input class="hidden" type="submit" value="Search Confluence" />
+				
+				</form>	
+			
+			</li>		
+		
+		</ul>
+	
+	</aside>
+	
+	<aside class="section">
+	
+		<h1>Quick Links</h1>
+	
+		<ul>
+			<li>
+				<a href="#">Link #1</a> | 
+				<a href="#">Link #2</a> | 
+				<a href="#">Link #3</a>				
+			</li>
+			<li>
+				<a href="#">Link #4</a> | 
+				<a href="#">Link #5</a> |
+				<a href="#">Link #6</a>		
+			</li>
+			<li>
+				<a href="#">Link #7</a> | 
+				<a href="#">Link #8</a>				
+			</li>
+			<li>
+				<a href="https://mail.google.com/mail/#inbox">Gmail</a> | 
+				<a href="https://calendar.google.com/calendar/render#main_7">Gcal</a> | 
+				<a href="https://drive.google.com/drive/my-drive">Gdrive</a>
+			</li>
+		</ul>
+	
+	</aside>
+	
+	<script src="js/common.js"></script>
+
+</body>
+</html>
